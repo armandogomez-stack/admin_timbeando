@@ -1,0 +1,155 @@
+{
+    "merchants" : [
+        {
+            "category" : "CASINO / SLOTS GAMES",
+            "providers" : [
+                {
+                    "name": "HABANERO",
+                    "code": "976"
+                },
+                {
+                    "name": "PLAYSON",
+                    "code": "943"
+                },
+                {
+                    "name": "TOM HORN",
+                    "code": "987"
+                },
+                {
+                    "name": "MISTER SLOTTY",
+                    "code": "986"
+                },
+                {
+                    "name": "AMATIC",
+                    "code": "989"
+                },
+                {
+                    "name": "BETSOFT",
+                    "code": "991"
+                },
+                {
+                    "name": "QUICKSPIN",
+                    "code": "969"
+                },
+                {
+                    "name": "EVOPLAY",
+                    "code": "940"
+                },
+                {
+                    "name": "PLATIPUS",
+                    "code": "949"
+                },
+                {
+                    "name": "APOLLO",
+                    "code": "950"
+                },
+                {
+                    "name": "IGROSOFT",
+                    "code": "926"
+                },
+                {
+                    "name": "PATAGONIA ENTERTAIMENT",
+                    "code": "947"
+                },
+                {
+                    "name": "PG SOFT",
+                    "code": "939"
+                },
+                {
+                    "name": "GAMEART",
+                    "code": "955"
+                },
+                {
+                    "name": "SPIGO",
+                    "code": "957"
+                },
+                {
+                    "name": "WE ARE CASINO",
+                    "code": "946"
+                },
+                {
+                    "name": "WORLD MATCH  ",
+                    "code": "979"
+                },
+                {
+                    "name": "SPINOMENAL",
+                    "code": "959"
+                },
+                {
+                    "name": "FUGASO ",
+                    "code": "927"
+                },
+                {
+                    "name": "NO LIMIT CITY",
+                    "code": "938"
+                },
+                {
+                    "name": "PARI PLAY",
+                    "code": "978"
+                },
+                {
+                    "name": "RED 1X2",
+                    "code": "970"
+                },
+                {
+                    "name": "BOOONGO",
+                    "code": "924"
+                },
+                {
+                    "name": "GANAPATI",
+                    "code": "932"
+                }
+            ]
+        },
+        {
+            "category" : "APUESTAS EN VIVO",
+            "providers" : [
+
+                {
+                    "name": "EVOLUTION ",
+                    "code": "998"
+                },
+                {
+                    "name": "BETGAMESTV",
+                    "code": "990"
+                },
+                {
+                    "name": "LUCKY STREAK",
+                    "code": "980"
+                },
+                {
+                    "name": "VIVO GAMING",
+                    "code": "945"
+                },
+                {
+                    "name": "JUEGOS XPRO",
+                    "code": "942"
+                },
+                {
+                    "name": "LIVEGAMES (TOMBOLA)",
+                    "code": "934"
+                },
+                {
+                    "name": "MEDIALIVE",
+                    "code": "936"
+                }
+            ]
+        },
+        {
+            "category" : "DEPORTES VIRTUALES",
+            "providers" : [
+                {
+                    "name": "RED 1X2 ",
+                    "code": "970"
+                },
+                {
+                    "name": "BETRADAR",
+                    "code": "952"
+                },
+                {
+                    "name": "KIRON INTERACTIVO",
+                    "code": "974"
+                }
+            ]
+        }   
+    ]}
