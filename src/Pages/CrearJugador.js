@@ -4,7 +4,7 @@ import LoaderPage from './LoaderPage'
 import { Link } from 'react-router-dom'
 import Menu from '../Components/Menu'
 import Logo from '../Components/Logo'
-import CreatePlayer from '../Components/CreatePlayer/Index'
+import CreateCashier from '../Components/CreateCashier/Index'
 
 
 function Index(props) {
@@ -40,7 +40,7 @@ function Index(props) {
 							<h5 class="card-title">
 								Crear jugador
 							</h5>
-							<CreatePlayer />
+							<CreateCashier />
 						</div>
 					</div>
 				</div>

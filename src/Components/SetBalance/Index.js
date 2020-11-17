@@ -30,14 +30,16 @@ function Index(props) {
 			return false
 		}
 
-		const request = 'https://callback.route86services.com/cashier/set/balance'
+		const request = 'https://callback.route86services.com/admin/set/balance'
 
 			try {
 				
 				const response = await axios.post(request , { amount, player_id, operation })
 
 				if( response.status === 201 ){
+					
 					props.setBalanceCallBack( response.data )
+
 					store.addNotification({
 						title: "Respuesta del servidor!",
 						message: 'The balance was set successfully',

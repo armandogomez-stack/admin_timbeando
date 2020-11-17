@@ -28,27 +28,7 @@ function Index( props ){
 
 
 	
-	const ProviderThumbnail = ({index}) => {
 
-
-		return (<div className='container pt-5'>
-		<div className='row'>
-			  { 
-				merchants[index].providers.map((item, key) => {
-					return (
-						<div className='col-lg-3 mb-5 provider-logo' key={key}>
-							<Link to={`/provider/${item.code}`}>
-								<div>
-									<img width={'100%'}  src={`https://www.timbeando.com/imagenes/${item.code}.png?78as68d`}  />
-								</div>
-							</Link>
-						</div>
-					)
-				})
-			  }
-		  </div>
-		  </div>)
-	}
 
 
 // item.PageCode
@@ -117,7 +97,7 @@ const gameRouter = (provider)=>{
 							to={`/crear-jugador`} 
 							className={'btn btn-primary'} 
 							style={{color : 'white', fontWeight : 'bolder'}}>
-								Crear jugador
+								Crear cajero
 							</Link>
 						</div>
 
@@ -126,7 +106,7 @@ const gameRouter = (provider)=>{
 								to={`/administrar-jugador`} 
 								className={'btn btn-primary'} 
 								style={{color : 'white', fontWeight : 'bolder'}}>
-								Administrar jugador
+								Administrar cajero
 							</Link>
 						</div>
 							  

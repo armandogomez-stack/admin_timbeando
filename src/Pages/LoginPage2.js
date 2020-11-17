@@ -1,17 +1,17 @@
-import React, {useContext} from 'react'
-import axios from 'axios'
+import React, { useContext } from 'react'
 import { Redirect } from 'react-router'
-import UserContext from '../Contexts/UserContext'
 import { store } from 'react-notifications-component'
+import axios from 'axios'
+import UserContext from '../Contexts/UserContext'
 import Env from '../Env'
 
 
 function Index( props ){
 
+  const { api_uri, base_url } = Env
   const [ email, setEmail ] = React.useState('')
   const [ password, setPassword ] = React.useState('')
   const user = useContext(UserContext)
-  const { api_uri, base_url } = Env
 
   const onChangeEmail  = ( e )=>{
     setEmail(e.target.value.toLowerCase())
@@ -36,7 +36,55 @@ function Index( props ){
 
     let result
     try {
-       result = await login(data)
+	   result = await login(data)
+	   
+	   if( result.data.user_type !== 'admin' ) {
+
+		store.addNotification({
+			title: "Acceso no permitido!",
+			message: `Esta cuenta no es administrador`,
+			type: "danger",
+			insert: "top",
+			container: "top-right",
+			animationIn: [ "animated", "fadeIn" ],
+			animationOut: [ "animated", "fadeOut" ],
+			dismiss: {
+			  duration: 5000,
+			  onScreen: true
+			}
+		  });
+		return false
+	}
+
+	if( result && result.data  ){
+
+		store.addNotification({
+		  title: "Bienvenido!",
+		  message: `${result.data.Name}`,
+		  type: "success",
+		  insert: "top",
+		  container: "top-right",
+		  animationIn: ["animated", "fadeIn"],
+		  animationOut: ["animated", "fadeOut"],
+		  dismiss: {
+			duration: 5000,
+			onScreen: true
+		  }
+		});
+  
+		axios.defaults.headers.common['access-token'] = result.data.token
+		 localStorage.setItem( 'user' , JSON.stringify({
+		   access_token : result.data.token,
+		   ...result.data,
+		   toggleMenu : false
+		 }))
+		 
+		 
+	  }
+	
+
+
+
     } catch (e) {
       
 
@@ -56,39 +104,18 @@ function Index( props ){
         });
       }
     }
-    
-    if( result && result.data  ){
+	
 
-      store.addNotification({
-        title: "Bienvenido!",
-        message: `${result.data.Name}`,
-        type: "success",
-        insert: "top",
-        container: "top-right",
-        animationIn: ["animated", "fadeIn"],
-        animationOut: ["animated", "fadeOut"],
-        dismiss: {
-          duration: 5000,
-          onScreen: true
-        }
-      });
 
-      axios.defaults.headers.common['access-token'] = result.data.token
-       localStorage.setItem( 'user' , JSON.stringify({
-         access_token : result.data.token,
-         ...result.data,
-         toggleMenu : false
-       }))
-       
-       
-    }
+   
 
     
   }
 
-  const login = async ( data ) =>  await axios.post(base_url(api_uri , 'Login' ), data )
+  const login = async ( data ) =>  await axios.post(base_url( api_uri , 'Login' ) , data )
   
-  if(user.access_token)
+
+  if( user.access_token )
     return <Redirect to={'/dashboard'}/>
 
 
@@ -121,7 +148,7 @@ function Index( props ){
                     <h5 className="font-weight-semibold mb-4 text-light">Por favor inicia sesion para continuar.</h5>
                     <form action="#" onSubmit={onSubmitHandler}>
                       <div className="form-group">
-                        <input onChange={(e)=>onChangeEmail(e)} className="form-control" type="text" value={email} placeholder='Operador / Gerente'/>
+                        <input onChange={(e)=>onChangeEmail(e)} className="form-control" type="text" value={email} placeholder='admin'/>
                       </div>
                       <div className="form-group">
                         <input onChange={(e)=>onChangePassword(e)} className="form-control" placeholder="Ingresa tu clave aqui" type="password" value={password}/>

@@ -44,9 +44,7 @@ return (<div className="menu">
 				{/* <span className='text-light'>Ultima conexion : </span> */}
 				</div>
 				<div className="right">
-					<span className="balance">
-						Saldo : <b>{ user.balance } ARS </b>
-					</span>
+					
 					<span>Bienvenido : {user.Name} </span>
 
 					<Link to="/">Home</Link>
