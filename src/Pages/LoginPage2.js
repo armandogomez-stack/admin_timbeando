@@ -145,7 +145,7 @@ function Index( props ){
                 <div className="card-sigin">
                   <div className="main-signup-header">
                      <h2 className='text-light'>Bienvenido!</h2>
-                    <h5 className="font-weight-semibold mb-4 text-light">Por favor inicia sesion para continuar.</h5>
+                    <h5 className="font-weight-semibold mb-4 text-light">Por favor inicia sesión para continuar.</h5>
                     <form action="#" onSubmit={onSubmitHandler}>
                       <div className="form-group">
                         <input onChange={(e)=>onChangeEmail(e)} className="form-control" type="text" value={email} placeholder='admin'/>

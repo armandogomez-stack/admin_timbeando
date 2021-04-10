@@ -17,10 +17,21 @@ function Index(props) {
 
 	const onChangeHandler = (event) => {
 		console.log(event.target.name, event.target.value)
+		
+		if(event.target.name === 'Login' ){
+			setUserData({
+				...userData,
+				[ event.target.name ] : event.target.value.toLowerCase()
+			})
+			
+			return
+		}
+		
 		setUserData({
 			...userData,
 			[ event.target.name ] : event.target.value
 		})
+
 	}
 
 	const sendData = async () => {
